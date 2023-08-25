@@ -2,12 +2,23 @@ import './App.css';
 import Movies from '../Movies/Movies';
 import movieData from '../../movieData';
 import SingleMovie from '../SingleMovie/SingleMovie';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
-  const [movies, setMovies] = useState(movieData)
+  const [movies, setMovies] = useState({})
   const [singleMovie, setSingleMovie] = useState(null)
+
+  function getAllMovies() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(res => res.json())
+      .then(data => setMovies(data))
+      .catch(error => console.log(error.message))
+  }
+
+  useEffect(() => {
+    getAllMovies()
+  }, [])
  
   function showSingleMovie(id) {
     const clickedMovie = movies.movies.find(movie => movie.id === id)
