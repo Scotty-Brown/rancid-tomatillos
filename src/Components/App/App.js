@@ -9,8 +9,8 @@ function App() {
   const [movies, setMovies] = useState(movieData)
   const [singleMovie, setSingleMovie] = useState(null)
  
-  function showSingleMovie(e) {
-    const clickedMovie = movies.movies.find(movie => movie.id == e.target.id)
+  function showSingleMovie(id) {
+    const clickedMovie = movies.movies.find(movie => movie.id === id)
     
     setSingleMovie(clickedMovie)
   }
