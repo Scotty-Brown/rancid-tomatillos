@@ -16,14 +16,19 @@ function App() {
       .catch(error => console.log(error.message))
   }
 
+  function getSingleMovie(id) {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(res => res.json())
+    .then(data => setSingleMovie(data))
+    .catch(error => console.log(error.message))
+  }
+  
   useEffect(() => {
     getAllMovies()
   }, [])
- 
+  
   function showSingleMovie(id) {
-    const clickedMovie = movies.movies.find(movie => movie.id === id)
-    
-    setSingleMovie(clickedMovie)
+    getSingleMovie(id)
   }
   
   function goBack() {
