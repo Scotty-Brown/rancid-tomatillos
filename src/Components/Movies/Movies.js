@@ -1,7 +1,7 @@
 import MovieCard from '../MovieCard/MovieCard'
 import './Movies.css'
 
-function Movies({movies}) {
+function Movies({movies, showSingleMovie}) {
   const movieCards = movies.movies.map(movie => {
     return (
       <MovieCard 
@@ -10,6 +10,7 @@ function Movies({movies}) {
         title={movie.title}
         img={movie.poster_path}
         rating={movie.average_rating}
+        showSingleMovie={showSingleMovie}
       />
     )
   })
