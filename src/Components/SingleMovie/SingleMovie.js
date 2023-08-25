@@ -1,7 +1,7 @@
 import './SingleMovie.css'
 import SingleMovieCard from '../SingleMovieCard/SingleMovieCard'
 
-function SingleMovie({movie}) {
+function SingleMovie({movie, goBack}) {
   return (
     <div className='single-movie-container'>
        <SingleMovieCard 
@@ -10,6 +10,7 @@ function SingleMovie({movie}) {
         title={movie.title}
         img={movie.poster_path}
         rating={movie.average_rating}
+        goBack={goBack}
       />
     </div>
   )

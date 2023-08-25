@@ -1,0 +1,7 @@
+.single-movie-card {
+  display: flex
+}
+
+.single-movie-card img{
+  width: 45vw
+}

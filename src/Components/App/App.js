@@ -15,12 +15,15 @@ function App() {
     setSingleMovie(clickedMovie)
   }
   
+  function goBack() {
+    setSingleMovie(null) 
+  }
+
   return (
     <main>
       <h1>Rancid Tomatillos</h1>
-      {!singleMovie ? (<Movies movies={movies} showSingleMovie={showSingleMovie} />
-      ) : (
-       <SingleMovie movie={singleMovie} />)}
+      {!singleMovie ? <Movies movies={movies} showSingleMovie={showSingleMovie} />
+       : <SingleMovie movie={singleMovie} goBack={goBack}/>}
       
     </main>
   )
