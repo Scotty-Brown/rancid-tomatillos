@@ -1,4 +1,5 @@
 import MovieCard from '../MovieCard/MovieCard'
+import './Movies.css'
 
 function Movies({movies}) {
   const movieCards = movies.movies.map(movie => {
@@ -14,7 +15,7 @@ function Movies({movies}) {
   })
 
   return (
-    <div>
+    <div className='movies-container'>
       {movieCards}
     </div>
   )
