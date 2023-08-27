@@ -3,7 +3,6 @@ import SingleMovieCard from '../SingleMovieCard/SingleMovieCard'
 
 function SingleMovie({movie, goBack, displayVideo}) {
   return (
-    <div className='single-movie-container'>
        <SingleMovieCard 
         key={movie.movie.id}
         id={movie.movie.id}
@@ -13,7 +12,6 @@ function SingleMovie({movie, goBack, displayVideo}) {
         goBack={goBack}
         displayVideo={displayVideo}
       />
-    </div>
   )
 }
 
