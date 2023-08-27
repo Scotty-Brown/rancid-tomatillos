@@ -4,6 +4,7 @@ import movieData from '../../movieData';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import { useEffect, useState } from 'react';
 import { getAllMovies, getSingleMovie, getMovieVideo } from '../../apiCalls'
+import ErrorHandling from '../ErrorHandling/ErrorHandling'
 
 function App() {
   const [movies, setMovies] = useState({})
@@ -28,6 +29,7 @@ function App() {
     .then(data => setVideo(data.videos[0].key))
     .catch(error => setError(`Request failed: ${error.message}`))
     let videoLink = `https://www.youtube.com/embed/${video}`
+    console.log('whatvid', video)
     return videoLink
   }
   
@@ -38,6 +40,7 @@ function App() {
   return (
     <main>
       <h1>Rancid Tomatillos</h1>
+      {error && <ErrorHandling error={error}/>}
       {!singleMovie ? <Movies movies={movies} showSingleMovie={showSingleMovie} />
        : <SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}
     </main>
