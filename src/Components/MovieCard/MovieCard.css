@@ -11,6 +11,8 @@
   border-radius: 15px;
   background-color: #696969d6;
   transition: transform 0.2s ease-in-out;
+  box-shadow: inset 0px 20px 20px 20px #ee90927a;
+  cursor: pointer;
 }
 
 .movie-card:hover {
@@ -21,6 +23,7 @@
   margin: 0;
     overflow: hidden;
     height: 30px;
+    font-family: "Vibur";
 }
 
 
@@ -28,10 +31,9 @@
   margin-top: 0;
   margin-bottom: 0;
   overflow: hidden;
+  font-family: "Vibur";
 }
 
 .movie-card-image {
-  /* width: 100%;
-  object-fit: cover; */
   max-height: 80%;
 }
