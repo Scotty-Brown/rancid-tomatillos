@@ -4,7 +4,7 @@ import "./Header.css"
 function Header() {
     return (
         <header className="header">
-            <h1>Rancid T<span>🍅</span>matill<span>🍅</span>'s</h1>
+            <h1 aria-label="Rancid Tomatillo's">Rancid T<span>🍅</span>matill<span>🍅</span>'s</h1>
         </header>
     )
 }
