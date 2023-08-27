@@ -6,7 +6,6 @@ function getAllMovies() {
     }
     return res.json()
   })
-  // .catch(error => console.error(`Request failed: ${error.message}`))
 }
 
 function getSingleMovie(id) {
@@ -17,7 +16,6 @@ function getSingleMovie(id) {
     }
     return res.json()
   })
-  // .catch(err => console.error(`Request failed: ${err.message}`))
 }
 
 function getMovieVideo(id) {
@@ -28,7 +26,6 @@ function getMovieVideo(id) {
     }
     return res.json()
   })
-  // .catch(err => console.error(`Request failed: ${err.message}`))
 }
 
 export {

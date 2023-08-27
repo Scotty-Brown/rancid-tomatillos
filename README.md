@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+photo credit:
+Photo by <a href="https://unsplash.com/@cyrus_c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cyrus Chew</a> on <a href="https://unsplash.com/photos/Dl39g6QhOIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 test
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
