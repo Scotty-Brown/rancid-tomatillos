@@ -2,6 +2,7 @@ import './App.css';
 import Movies from '../Movies/Movies';
 import movieData from '../../movieData';
 import SingleMovie from '../SingleMovie/SingleMovie';
+import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 
 
@@ -54,7 +55,8 @@ function App() {
 
   return (
     <main>
-      <h1>Rancid Tomatillos</h1>
+      {/* <h1>Rancid Tomatillos</h1> */}
+      <Header />
       {!singleMovie ? <Movies movies={movies} showSingleMovie={showSingleMovie} />
        : <SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}
       
