@@ -2,7 +2,11 @@ import MovieCard from '../MovieCard/MovieCard'
 import './Movies.css'
 
 function Movies({movies, showSingleMovie}) {
-  const movieCards = movies.movies.map(movie => {
+  let movieCards
+  if (!movies.movies) {
+    return
+  } else {
+    movieCards = movies.movies.map(movie => {
     return (
       <MovieCard 
         key={movie.id}
@@ -14,7 +18,7 @@ function Movies({movies, showSingleMovie}) {
       />
     )
   })
-
+}
   return (
     <div className='movies-container'>
       {movieCards}
