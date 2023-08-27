@@ -2,6 +2,7 @@ import './App.css';
 import Movies from '../Movies/Movies';
 import movieData from '../../movieData';
 import SingleMovie from '../SingleMovie/SingleMovie';
+import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { getAllMovies, getSingleMovie, getMovieVideo } from '../../apiCalls'
 import ErrorHandling from '../ErrorHandling/ErrorHandling'
@@ -39,7 +40,7 @@ function App() {
 
   return (
     <main>
-      <h1>Rancid Tomatillos</h1>
+      <Header />
       {error && <ErrorHandling error={error}/>}
       {!singleMovie ? <Movies movies={movies} showSingleMovie={showSingleMovie} />
        : <SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}
