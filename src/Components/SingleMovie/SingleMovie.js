@@ -8,8 +8,15 @@ function SingleMovie({movie, goBack, displayVideo}) {
         key={movie.movie.id}
         id={movie.movie.id}
         title={movie.movie.title}
+        tagLine={movie.movie.tagline}
+        releaseDate={movie.movie.release_date}
+        genres={movie.movie.genres}
         img={movie.movie.poster_path}
         rating={movie.movie.average_rating}
+        budget={movie.movie.budget}
+        revenue={movie.movie.revenue}
+        runTime={movie.movie.runtime}
+        overview={movie.movie.overview}
         goBack={goBack}
         displayVideo={displayVideo}
       />
