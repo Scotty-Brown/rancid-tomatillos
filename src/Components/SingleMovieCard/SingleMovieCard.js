@@ -7,7 +7,7 @@ const video = displayVideo(id)
 
   return (
     <div className='single-movie-card'> 
-      <img className='movie-card-image' src={img} />
+      <img className='movie-card-image' src={img} alt={title}/>
       <div className='single-card-body-all'>
         <div className='single-card-body-text'>
           <h2>{title}</h2>
