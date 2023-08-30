@@ -11,6 +11,7 @@ function SingleMovie({movie, goBack, displayVideo}) {
         tagLine={movie.movie.tagline}
         releaseDate={movie.movie.release_date}
         genres={movie.movie.genres}
+        backdropImg={movie.movie.backdrop_path}
         img={movie.movie.poster_path}
         rating={movie.movie.average_rating}
         budget={movie.movie.budget}

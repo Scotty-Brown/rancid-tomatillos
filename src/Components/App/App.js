@@ -30,7 +30,6 @@ function App() {
     .then(data => setVideo(data.videos[0].key))
     .catch(error => setError(`Request failed: ${error.message}`))
     let videoLink = `https://www.youtube.com/embed/${video}`
-    console.log('whatvid', video)
     return videoLink
   }
   
