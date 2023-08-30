@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom'
 import './MovieCard.css'
 import PropTypes from 'prop-types'
 

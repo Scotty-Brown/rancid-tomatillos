@@ -1,9 +1,8 @@
+import { Link, useParams } from 'react-router-dom'
 import './SingleMovieCard.css'
 
 function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdropImg, rating, budget, revenue, runTime, overview, goBack, displayVideo}) {
-
   const video = displayVideo(id)
-
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${backdropImg})`}}> 
       <div className='single-card-body-all'>
@@ -22,7 +21,7 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
               <p>Revenue: ${revenue.toLocaleString()}</p>
               <p>Run Time: {runTime} minutes</p>
               <p>{overview}</p>
-              <button onClick={goBack}>Go Back</button>
+              <Link to={'/'} className='button'>Go Back</Link>
             </div>
           </section>
         </div>

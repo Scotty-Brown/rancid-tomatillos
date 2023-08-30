@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
 import { getAllMovies, getSingleMovie, getMovieVideo } from '../../apiCalls'
 import ErrorHandling from '../ErrorHandling/ErrorHandling'
+import { Route, Routes, useParams } from 'react-router-dom';
 
 function App() {
   const [movies, setMovies] = useState({})
@@ -41,8 +42,10 @@ function App() {
     <main>
       <Header />
       {error && <ErrorHandling error={error}/>}
-      {!singleMovie ? <Movies movies={movies} showSingleMovie={showSingleMovie} />
-       : <SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}
+      <Routes>
+        <Route path='/' element={<Movies movies={movies} showSingleMovie={showSingleMovie}/>} />
+        <Route path='/movie/:id' element={<SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}/> 
+      </Routes>
     </main>
   )
 
