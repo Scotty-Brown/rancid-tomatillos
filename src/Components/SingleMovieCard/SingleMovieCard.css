@@ -51,7 +51,7 @@ p {
   opacity: 95%;
 }
 
-button {
+.button {
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
 	background:linear-gradient(to bottom, #521617 5%, #080000 100%);
 	background-color:#ee9092;
