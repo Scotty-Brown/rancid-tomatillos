@@ -1,18 +1,16 @@
 .movie-card {
-  box-sizing: border-box;
-  border: 3px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; 
-  height: 325px; 
-  overflow: hidden; 
-  width: 30%;
-  border-radius: 15px;
-  background-color: #696969d6;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: inset 0px 20px 20px 20px #ee90927a;
-  cursor: pointer;
+    box-sizing: border-box;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 325px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 15px;
+    background-color: hsl(0deg 0% 0%);
+    cursor: pointer;
 }
 
 .movie-card:hover {
@@ -32,8 +30,10 @@
   margin-bottom: 0;
   overflow: hidden;
   font-family: "Vibur";
+  color: white;
+  font: icon;
 }
 
 .movie-card-image {
-  max-height: 80%;
+  max-height: 90%;
 }

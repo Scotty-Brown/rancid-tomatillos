@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import './SingleMovie.css';
 import SingleMovieCard from '../SingleMovieCard/SingleMovieCard';
 
-function SingleMovie({ movie, goBack, displayVideo }) {
+function SingleMovie({ movie, goBack }) {
   return movie ? (
     <SingleMovieCard
       key={movie.movie.id}
@@ -19,7 +19,6 @@ function SingleMovie({ movie, goBack, displayVideo }) {
       runTime={movie.movie.runtime}
       overview={movie.movie.overview}
       goBack={goBack}
-      // displayVideo={displayVideo}
     />
   ) : null;
 }
@@ -38,5 +37,4 @@ SingleMovie.propTypes = {
     })
   ),
   goBack: PropTypes.func.isRequired,
-  displayVideo: PropTypes.func.isRequired
 };
