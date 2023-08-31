@@ -15,10 +15,10 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
             </div>
             <div className='single-card-description'>
               <p>Release Date: {releaseDate}</p>
-              <p>Genres: {genres.join(' | ').split()}</p>
-              <p>Rancid Rating - {rating.toFixed(1)} 🍅s</p>
-              <p>Budget: ${budget.toLocaleString()}</p>
-              <p>Revenue: ${revenue.toLocaleString()}</p>
+              <p>Genres: {genres?.join(' | ').split()}</p>
+              <p>Rancid Rating - {rating?.toFixed(1)} 🍅s</p>
+              <p>Budget: ${budget?.toLocaleString()}</p>
+              <p>Revenue: ${revenue?.toLocaleString()}</p>
               <p>Run Time: {runTime} minutes</p>
               <p>{overview}</p>
               <Link to={'/'} className='button'>Go Back</Link>

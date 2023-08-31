@@ -17,13 +17,13 @@ function App() {
   useEffect(() => {
     getAllMovies()
     .then(data => setMovies(data))
-    .catch(error => setError(`Request failed: ${error.message}`))
+    .catch(error => setError(`Request failed - ${error.message}`))
   }, [])
 
   function showSingleMovie(id) {
     getSingleMovie(id)
     .then(data => setSingleMovie(data))
-    .catch(error => setError(`Request failed: ${error.message}`))
+    .catch(error => setError(`Request failed - ${error.message}`))
   }
 
   // function displayVideo(id) {
@@ -52,41 +52,3 @@ function App() {
 }
 
 export default App;
-
-  // function getAllMovies() {
-  //   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  //     .then(res => res.json())
-  //     .then(data => setMovies(data))
-  //     .catch(error => console.log(error.message))
-  // }
-
-  // function getSingleMovie(id) {
-  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-  //   .then(res => res.json())
-  //   .then(data => setSingleMovie(data))
-  //   .catch(error => console.log(error.message))
-  // }
-
-  // function getVideo(id) {
-  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-  //   .then(res => res.json())
-  // .then(data => {
-  //   const firstVideoLink = data.videos[0].key;
-  //       setVideo(firstVideoLink);
-  // })
-  //   .catch(error => console.log(error.message))
-  // }
-
-  // function displayVideo(id) {
-  //   let videoLink = `https://www.youtube.com/embed/${video}`
-  //   return videoLink
-  // }
-  
-  // useEffect(() => {
-  //   getAllMovies()
-  // }, [])
-  
-  // function showSingleMovie(id) {
-  //   getSingleMovie(id)
-  //   getVideo(id)
-  // }
