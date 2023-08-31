@@ -1,6 +1,5 @@
 import './App.css';
 import Movies from '../Movies/Movies';
-import movieData from '../../movieData';
 import SingleMovie from '../SingleMovie/SingleMovie';
 import Header from '../Header/Header';
 import { useEffect, useState } from 'react';
@@ -11,7 +10,6 @@ import { Route, Routes, useParams } from 'react-router-dom';
 function App() {
   const [movies, setMovies] = useState({})
   const [singleMovie, setSingleMovie] = useState(null)
-  const [video, setVideo] = useState('')
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -25,14 +23,6 @@ function App() {
     .then(data => setSingleMovie(data))
     .catch(error => setError(`Request failed - ${error.message}`))
   }
-
-  // function displayVideo(id) {
-  //   getMovieVideo(id)
-  //   .then(data => setVideo(data.videos[0].key))
-  //   .catch(error => setError(`Request failed: ${error.message}`))
-  //   let videoLink = `https://www.youtube.com/embed/${video}`
-  //   return videoLink
-  // }
   
   function goBack() {
     setSingleMovie(null) 

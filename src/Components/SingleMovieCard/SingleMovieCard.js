@@ -6,9 +6,8 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${backdropImg})`}}> 
       <div className='single-card-body-all'>
-        <div className='single-card-body-text'> 
           <img className='single-movie-card-image' src={img} alt={title}/>
-          <section>
+          <section className='single-card-body-text'>
             <div className='single-movie-headings'>
               <h2>{title}</h2>
               <h3>Tagline: "{tagLine} "</h3>
@@ -24,8 +23,6 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
               <Link to={'/'} className='button'>Go Back</Link>
             </div>
           </section>
-        </div>
-        {/* <iframe title="Embedded youtube trailer" width="560" height="315" src={video} allowFullScreen></iframe> */}
       </div>
     </article>
   )
