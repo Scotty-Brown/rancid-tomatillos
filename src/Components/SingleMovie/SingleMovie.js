@@ -38,5 +38,5 @@ SingleMovie.propTypes = {
     })
   ),
   goBack: PropTypes.func.isRequired,
-  displayVideo: PropTypes.func.isRequired
+  // displayVideo: PropTypes.func.isRequired
 };

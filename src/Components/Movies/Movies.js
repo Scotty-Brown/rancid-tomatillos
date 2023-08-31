@@ -6,7 +6,7 @@ function Movies({ movies, showSingleMovie }) {
   const movieCards = movies.movies
     ? movies.movies.map((movie) => {
         return (
-          <Link to={`/movie/${movie.id}`} key={movie.id}>
+          <Link to={`/movie/${movie.id}`} className='movie-comp' key={movie.id}>
             <MovieCard
               id={movie.id}
               title={movie.title}
