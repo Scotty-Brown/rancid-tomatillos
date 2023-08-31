@@ -26,13 +26,13 @@ function App() {
     .catch(error => setError(`Request failed: ${error.message}`))
   }
 
-  function displayVideo(id) {
-    getMovieVideo(id)
-    .then(data => setVideo(data.videos[0].key))
-    .catch(error => setError(`Request failed: ${error.message}`))
-    let videoLink = `https://www.youtube.com/embed/${video}`
-    return videoLink
-  }
+  // function displayVideo(id) {
+  //   getMovieVideo(id)
+  //   .then(data => setVideo(data.videos[0].key))
+  //   .catch(error => setError(`Request failed: ${error.message}`))
+  //   let videoLink = `https://www.youtube.com/embed/${video}`
+  //   return videoLink
+  // }
   
   function goBack() {
     setSingleMovie(null) 
@@ -44,7 +44,7 @@ function App() {
       {error && <ErrorHandling error={error}/>}
       <Routes>
         <Route path='/' element={<Movies movies={movies} showSingleMovie={showSingleMovie}/>} />
-        <Route path='/movie/:id' element={<SingleMovie movie={singleMovie} goBack={goBack} displayVideo={displayVideo}/>}/> 
+        <Route path='/movie/:id' element={<SingleMovie movie={singleMovie} goBack={goBack} />}/> 
       </Routes>
     </main>
   )

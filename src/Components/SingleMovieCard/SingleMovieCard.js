@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import './SingleMovieCard.css'
 
 function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdropImg, rating, budget, revenue, runTime, overview, goBack, displayVideo}) {
-  const video = displayVideo(id)
+  // const video = displayVideo(id)
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${backdropImg})`}}> 
       <div className='single-card-body-all'>
@@ -25,7 +25,7 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
             </div>
           </section>
         </div>
-        <iframe title="Embedded youtube trailer" width="560" height="315" src={video} allowFullScreen></iframe>
+        {/* <iframe title="Embedded youtube trailer" width="560" height="315" src={video} allowFullScreen></iframe> */}
       </div>
     </article>
   )
