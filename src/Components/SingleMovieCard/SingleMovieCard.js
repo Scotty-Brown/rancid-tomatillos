@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import './SingleMovieCard.css'
 
 function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdropImg, rating, budget, revenue, runTime, overview, goBack, displayVideo}) {
-  const video = displayVideo(id)
+  // const video = displayVideo(id)
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${backdropImg})`}}> 
       <div className='single-card-body-all'>
@@ -15,17 +15,17 @@ function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdrop
             </div>
             <div className='single-card-description'>
               <p>Release Date: {releaseDate}</p>
-              <p>Genres: {genres.join(' | ').split()}</p>
-              <p>Rancid Rating - {rating.toFixed(1)} 🍅s</p>
-              <p>Budget: ${budget.toLocaleString()}</p>
-              <p>Revenue: ${revenue.toLocaleString()}</p>
+              <p>Genres: {genres?.join(' | ').split()}</p>
+              <p>Rancid Rating - {rating?.toFixed(1)} 🍅s</p>
+              <p>Budget: ${budget?.toLocaleString()}</p>
+              <p>Revenue: ${revenue?.toLocaleString()}</p>
               <p>Run Time: {runTime} minutes</p>
               <p>{overview}</p>
               <Link to={'/'} className='button'>Go Back</Link>
             </div>
           </section>
         </div>
-        <iframe title="Embedded youtube trailer" width="560" height="315" src={video} allowFullScreen></iframe>
+        {/* <iframe title="Embedded youtube trailer" width="560" height="315" src={video} allowFullScreen></iframe> */}
       </div>
     </article>
   )

@@ -19,7 +19,7 @@ function SingleMovie({ movie, goBack, displayVideo }) {
       runTime={movie.movie.runtime}
       overview={movie.movie.overview}
       goBack={goBack}
-      displayVideo={displayVideo}
+      // displayVideo={displayVideo}
     />
   ) : null;
 }
