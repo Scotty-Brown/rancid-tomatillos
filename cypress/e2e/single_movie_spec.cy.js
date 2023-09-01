@@ -1,8 +1,8 @@
 describe('Single Movie Page', () => {
   beforeEach(() => {
-    cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,
-      fixture: "mainSampleData"
+      fixture: 'mainSampleData'
     })
     .visit('http://localhost:3000/')
   })
@@ -15,8 +15,8 @@ describe('Single Movie Page', () => {
       fixture: 'blackAdamMock'
     })
 
-    cy.get('[href="/movie/436270"] > .movie-card').click()
-    .url().should('eq', 'http://localhost:3000/movie/436270')
+    cy.get('[href="/436270"] > .movie-card').click()
+    .url().should('eq', 'http://localhost:3000/436270')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-card-image').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
     .get('.single-movie-headings').contains('h2', 'Black Adam')
@@ -39,8 +39,8 @@ describe('Single Movie Page', () => {
       fixture: 'ripdMock'
     })
 
-    cy.get('[href="/movie/1013860"] > .movie-card').click()
-    .url().should('eq', 'http://localhost:3000/movie/1013860')
+    cy.get('[href="/1013860"] > .movie-card').click()
+    .url().should('eq', 'http://localhost:3000/1013860')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
