@@ -1,10 +1,9 @@
-// import { useParams } from 'react-router-dom'
 import './MovieCard.css'
 import PropTypes from 'prop-types'
 
-function MovieCard({title, img, rating, id, showSingleMovie}) {
+function MovieCard({title, img, rating }) {
   return (
-    <div className='movie-card' onClick={() =>{showSingleMovie(id)}}>
+    <div className='movie-card'>
       <p>Rancid Rating - {rating.toFixed(1)} 🍅s</p>
       <img className='movie-card-image' src={img} alt={title}/>
     </div>
@@ -16,5 +15,4 @@ MovieCard.propTypes = {
   img: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
-  showSingleMovie: PropTypes.func.isRequired 
 }

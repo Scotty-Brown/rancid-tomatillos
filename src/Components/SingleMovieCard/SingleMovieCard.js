@@ -1,8 +1,8 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './SingleMovieCard.css'
 
-function SingleMovieCard({title, tagLine, releaseDate, genres, id, img, backdropImg, rating, budget, revenue, runTime, overview, goBack, displayVideo}) {
-  // const video = displayVideo(id)
+function SingleMovieCard({title, tagLine, releaseDate, genres, img, backdropImg, rating, budget, revenue, runTime, overview }) {
+
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${backdropImg})`}}> 
       <div className='single-card-body-all'>
