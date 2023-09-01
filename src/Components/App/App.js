@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   function showSingleMovie(id) {
-    // setSingleMovie(null)
+    setSingleMovie(null)
     getSingleMovie(id)
     .then(data => setSingleMovie(data))
     .catch(error => setError(`Request failed - ${error.message}`))
