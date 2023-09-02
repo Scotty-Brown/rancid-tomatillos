@@ -3,19 +3,20 @@ describe('Single Movie Page', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,
       fixture: 'mainSampleData'
-    })
+    }).as('getData')
     .visit('http://localhost:3000/')
+    .wait('@getData')
   })
 
 
   it('Should select the first movie and show movie details', () => {
-
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
       statusCode: 200,
       fixture: 'blackAdamMock'
-    })
+    }).as('getBlackAdamMock')
 
     cy.get('[href="/436270"] > .movie-card').click()
+    .wait('@getBlackAdamMock')
     .url().should('eq', 'http://localhost:3000/436270')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-card-image').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
@@ -37,9 +38,10 @@ describe('Single Movie Page', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860', {
       statusCode: 200,
       fixture: 'ripdMock'
-    })
+    }).as('getRipdMock')
 
     cy.get('[href="/1013860"] > .movie-card').click()
+    .wait('@getRipdMock')
     .url().should('eq', 'http://localhost:3000/1013860')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
@@ -53,7 +55,9 @@ describe('Single Movie Page', () => {
 
   it('should return 404 error', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 404})
+      statusCode: 404}).as('getSecondData')
+      .visit('http://localhost:3000/')
+      .wait('@getSecondData')
     .get('.error').should('exist')
     .get('h2').should('contain', 'Request failed - 404: Nothing to see here')
     .get('img').should('have.attr', 'src')
@@ -61,7 +65,9 @@ describe('Single Movie Page', () => {
   
   it('should return 500 error', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 500})
+      statusCode: 500}).as('getThirdData')
+      .visit('http://localhost:3000/')
+      .wait('@getThirdData')
     .get('.error').should('exist')
     .get('h2').should('contain', 'Request failed - 500: Nothing to see here')
     .get('img').should('have.attr', 'src')

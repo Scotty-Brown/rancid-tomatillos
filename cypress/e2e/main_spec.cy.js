@@ -3,8 +3,9 @@ describe('Mainpage', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,
       fixture: 'mainSampleData'
-    })
+    }).as('getData')
     .visit('http://localhost:3000/')
+    .wait('@getData')
   });
   it('Should show header element on page load', () => {
     cy.get('header').should('exist')
@@ -21,7 +22,9 @@ describe('Mainpage', () => {
 
   it('Should return 404 error', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 404})
+      statusCode: 404}).as('getSecondData')
+      .visit('http://localhost:3000/')
+      .wait('@getSecondData')
     .get('.error').should('exist')
     .get('h2').should('contain', 'Request failed - 404: Nothing to see here')
     .get('img').should('have.attr', 'src')
@@ -29,7 +32,9 @@ describe('Mainpage', () => {
 
   it('Should return 500 error', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 500})
+      statusCode: 500}).as('getThirdData')    
+      .visit('http://localhost:3000/')
+      .wait('@getThirdData')
     .get('.error').should('exist')
     .get('h2').should('contain', 'Request failed - 500: Nothing to see here')
     .get('img').should('have.attr', 'src')
