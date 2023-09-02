@@ -6,22 +6,27 @@ describe('Error Handling Page', () => {
       {
         statusCode: 200,
         fixture: 'mainSampleData'
-      }
-    ).visit('http://localhost:3000/');
-
-    cy.intercept(
+      }).as('getData')
+      .visit('http://localhost:3000/')
+      .wait('@getData')
+    
+      cy.intercept(
       'GET',
       'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270',
       { statusCode: 404 }
-    );
+    ).as('getSecondData')
+   
+    
 
     cy.get('[href="/436270"] > .movie-card').click()
+      .wait('@getSecondData')
       .url().should('eq', 'http://localhost:3000/436270')
       .get('.error').should('exist')
       .get('h2').should('contain', 'Request failed - 404: Nothing to see here')
       .get('img').should('have.attr', 'src');
 
     cy.get('a').click()
+      .wait('@getData')
       .url().should('eq', 'http://localhost:3000/')
       .get('.movie-card').first().contains('p', 'Rancid Rating - 4.0 🍅s')
       .get('.movie-card-image').first().should(
