@@ -4,7 +4,7 @@ import './Movies.css';
 
 function Movies({ movies }) {
   const movieCards = movies.movies
-    ? movies.movies.map((movie) => {
+    && movies.movies.map((movie) => {
         return (
           <Link to={`/${movie.id}`} className='movie-comp' key={movie.id}>
             <MovieCard
@@ -16,7 +16,6 @@ function Movies({ movies }) {
           </Link>
         );
       })
-    : null;
 
   return <div className="movies-container">{movieCards}</div>;
 }

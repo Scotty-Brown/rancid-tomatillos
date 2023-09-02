@@ -40,7 +40,7 @@ function App() {
       {loading && <Loading loading={loading}/>}
       <Routes>
         <Route path='/' element={<Movies movies={movies} />} />
-        <Route path='/:id' element={<SingleMovie setError={setError} />}/> 
+        <Route path='/:id' element={<SingleMovie setLoading={setLoading} setError={setError} />}/> 
         <Route path='*' element={<ErrorHandling error={error}/>}></Route>
       </Routes>
     </main>
