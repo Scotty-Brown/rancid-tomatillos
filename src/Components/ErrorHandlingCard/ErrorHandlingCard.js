@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 function ErrorHandlingCard({error}) {
   return (
     <div className='error'>
-      <Link to='/'>Retry</Link>
+      <Link className='retry-button' to='/'>Retry</Link>
       <h2>{error}</h2>
       <img src={grumpyCat}></img>
     </div>
