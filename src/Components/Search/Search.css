@@ -5,7 +5,12 @@
 }
 
 .input-field {
-  width: 20em;
-  height: 1.7em;
-  border-radius: 8px
+    width: 20em;
+    border-radius: 8px;
+    background: black;
+    color: white;
+    border-color: black;
+    box-shadow: 0px 0px 7px 5px #ee90927a;
+    font-size: 20px;
+    font-weight: bold;
 }
