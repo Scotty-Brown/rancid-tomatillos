@@ -62,6 +62,7 @@ describe('Single Movie Page', () => {
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
     .get('.single-card-description').children().should('have.length', 4)
     .get('.single-card-description').contains('p', 'Budget: $130')
+    cy.get('.trailer-div > .button').should('exist')
     cy.get('.go-back').click()
     .url().should('eq', 'http://localhost:3000/')
   })
