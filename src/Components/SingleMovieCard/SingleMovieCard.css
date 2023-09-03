@@ -68,15 +68,16 @@ p {
 	padding:8px 18px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #cc9f52;
+  margin-top: 5px;
 }
-button:hover {
+.button:hover {
 	background:linear-gradient(to bottom, black 5%, #ee9092 100%);
 	background-color:#ee9092;
 }
-button:active {
+/* .button:active {
 	position:relative;
 	top:1px;
-}
+} */
 
 @media screen and (max-width: 865px) {
   .single-card-body-all {
