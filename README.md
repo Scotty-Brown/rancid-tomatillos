@@ -1,75 +1,75 @@
-# Getting Started with Create React App
+<div id="description" align="center">
 
-photo credit:
-Photo by <a href="https://unsplash.com/@cyrus_c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cyrus Chew</a> on <a href="https://unsplash.com/photos/Dl39g6QhOIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+# Rancid Tomatillos
 
-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### &nbsp; &nbsp; &nbsp; Judy Ye &nbsp; || &nbsp; Scotty Brown
 
-## Available Scripts
+[![LinkedIn](https://img.shields.io/badge/Judy-blue?style=for-the-badge&logo=LinkedIn&logoColor=black)](https://www.linkedin.com/in/judy0ye)
+[![LinkedIn](https://img.shields.io/badge/Scotty-blue?style=for-the-badge&logo=LinkedIn&logoColor=black)](https://www.linkedin.com/in/scotty-brown-2140b3278/)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :pencil: Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This application allows users to view an array of movies and and select a movie from that array to view more details.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</div>
 
-### `npm run build`
+## 🎥: Preview
+<details open>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+</details>
 
-### `npm run eject`
+### Abstract:
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+This application simulates a movie library, in which users can search through and find the movie they want to view more details on. The user can click on a movie, view its details, and return back to the homepage with the full movie libary. This project runs on a local server and interacts with API endpoints.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation Instructions:
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+In order to use this project, please follow the steps below:
+- Clone down the repository
+- CD into the repository
+- Run ```npm install``` to download all the library dependencies
+- View and interact with the project live by running ```npm start``` on the terminal and your web browswer will bring you to the local host address of http://localhost:3000/ 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏫 Context:
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+We worked on it for approximately 45 hours and we are 14 weeks into Turing School of Software and Design's coding bootcamp.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributors
+- [Scotty Brown](https://github.com/Scotty-Brown)
+- [Judy Ye](https://github.com/judy0ye)
 
-## Learn More
+## 📚 Learning Goals:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
+The learning goals include gaining competency with React fundatmentals, testing React components and asynchronous Javascript, practice refactoring, and creating multi-page UX using React Router. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🖥️ Technologies Used
+<div align='center'>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> 
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> 
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e" /> 
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🌱 Wins + Challenges:
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+Wins:
+- 
 
-### Analyzing the Bundle Size
+Challenges:
+- 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ℹ️ Source Credits:
+- Error Handling Page Photo by <a href="https://unsplash.com/@cyrus_c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cyrus Chew</a> on <a href="https://unsplash.com/photos/Dl39g6QhOIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
