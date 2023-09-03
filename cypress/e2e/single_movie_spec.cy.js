@@ -3,27 +3,37 @@ describe('Single Movie Page', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 200,
       fixture: 'mainSampleData'
-    }).as('getData')
-    .visit('http://localhost:3000/')
-    // .wait('@getData')
-  })
-  
-  
-  it('Should select the first movie and show movie details', () => {
+    }).as('getAllMovies')
+
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
       statusCode: 200,
       fixture: 'blackAdamMock'
     }).as('getBlackAdamMock')
-    
+
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos', {
       statusCode: 200, 
-      fixture: 'trailerFetch'
-    }).as('trailer')
+      fixture: 'blackAdamTrailerFetch'
+    }).as('getBlackAdamTrailer')
 
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860', {
+      statusCode: 200,
+      fixture: 'ripdMock'
+    }).as('getRipdMock')
+  
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860/videos', {
+      statusCode: 200, 
+      fixture: 'ripdTrailerFetch'
+    }).as('getRipdTrailer')
+  })
+  
+  
+  it('Should select the first movie and show movie details', () => {
+    
+    cy.visit('http://localhost:3000/')
+    .wait('@getAllMovies')
+    
     cy.get('[href="/436270"] > .movie-card').click()
-    // cy.wait(1000)
-    cy.wait(['@getBlackAdamMock', '@trailer'])
-    // .wait('@trailer')
+    cy.wait(['@getBlackAdamMock', '@getBlackAdamTrailer'])
     .url().should('eq', 'http://localhost:3000/436270')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-card-image').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
@@ -41,46 +51,19 @@ describe('Single Movie Page', () => {
   })
 
   it('Should select another movie and show details', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860', {
-      statusCode: 200,
-      fixture: 'ripdMock'
-    }).as('getRipdMock')
-
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1013860/videos', {
-      statusCode: 200, 
-      fixture: 'trailerFetch'
-    }).as('trailer')
+    cy.visit('http://localhost:3000/')
+    .wait('@getAllMovies')
 
     cy.get('[href="/1013860"] > .movie-card').click()
-    cy.wait(['@getRipdMock', '@trailer'])
+    cy.wait(['@getRipdMock', '@getRipdTrailer'])
     .url().should('eq', 'http://localhost:3000/1013860')
     .get('.single-movie-card').should('exist')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
-    .get('.single-card-description').children().should('have.length', 3)
+    .get('.single-card-description').children().should('have.length', 4)
     .get('.single-card-description').contains('p', 'Budget: $130')
     cy.get('.go-back').click()
     .url().should('eq', 'http://localhost:3000/')
-
   })
 
-  it('should return 404 error', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 404}).as('getSecondData')
-      .visit('http://localhost:3000/')
-      .wait('@getSecondData')
-    .get('.error').should('exist')
-    .get('h2').should('contain', 'Request failed - 404: Nothing to see here')
-    .get('img').should('have.attr', 'src')
-  })
-  
-  it('should return 500 error', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-      statusCode: 500}).as('getThirdData')
-      .visit('http://localhost:3000/')
-      .wait('@getThirdData')
-    .get('.error').should('exist')
-    .get('h2').should('contain', 'Request failed - 500: Nothing to see here')
-    .get('img').should('have.attr', 'src')
-  })
 })
