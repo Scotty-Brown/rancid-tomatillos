@@ -104,6 +104,12 @@ p {
 	background-color:#ee9092;
 }
 
+.button:active,
+.button:focus {
+	background:linear-gradient(to bottom, black 5%, #ee9092 100%);
+	background-color:#ee9092;
+}
+
 
 @media screen and (max-width: 865px) {
   .single-card-body-all {

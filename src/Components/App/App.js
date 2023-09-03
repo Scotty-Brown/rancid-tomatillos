@@ -36,13 +36,32 @@ function App() {
     
   }, [])
 
+  const handleSortMostRancid = () => {
+    const sortedMovies = [...movies.movies].sort((a, b) => b.average_rating - a.average_rating)
+    setMovies({ movies: sortedMovies })
+  }
+
+  const handleSortLeastRancid = () => {
+    const sortedMovies = [...movies.movies].sort((a, b) => a.average_rating - b.average_rating)
+    setMovies({ movies: sortedMovies })
+  }
+
   return (
     <main>
+
       <Header />
       {error && <ErrorHandling error={error}/>}
       {loading && <Loading loading={loading}/>}
       <Routes>
-        <Route path='/' element={<><Search setSearchInput={setSearchInput}/>< Movies movies={movies} searchInput={searchInput} setMovies={setMovies} /></>} />
+        <Route path='/' element={ !loading &&
+          <>
+            <Search setSearchInput={setSearchInput}/>
+            <div className='sort'>
+              <button className='button most-rancid' onClick={handleSortMostRancid}>Most Rancid</button>
+              <button className='button least-rancid' onClick={handleSortLeastRancid}>Least Rancid</button>
+            </div>
+            <Movies movies={movies} searchInput={searchInput} setMovies={setMovies}/>
+          </>}/>
         <Route path='/:id' element={<SingleMovie setLoading={setLoading} setError={setError} />}/> 
         <Route path='*' element={<ErrorHandling error={error}/>}></Route>
       </Routes>
