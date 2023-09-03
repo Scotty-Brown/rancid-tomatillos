@@ -29,6 +29,9 @@ function SingleMovie({ setError, setLoading }) {
     getMovieVideo(id)
     .then(data => {
       const trailer = data.videos.find((entry) => entry.type === "Trailer")
+      if(!trailer) {
+        return
+      }
       const link = `https://www.youtube.com/watch?v=${trailer.key}`
       setVideo(link)
     })

@@ -3,10 +3,8 @@
   flex-direction: column;
   background-color: hsl(0deg 0% 0%);
   box-shadow: 0px 0px 20px 20px #ee90927a;
-  height: 60vh;
-  /* padding-top: 205px; */
+  height: 100%;
   border: 5px solid white;
-  /* width: 75%; */
   margin-top: 205px;
   align-items: center;
   margin-left: 25vw;
