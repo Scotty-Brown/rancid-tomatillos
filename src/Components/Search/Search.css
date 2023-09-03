@@ -1,5 +1,11 @@
 .search{
   display: flex;
   justify-content: center;
-  padding-top: 12rem;
+  padding-top: 13em;
+}
+
+.input-field {
+  width: 20em;
+  height: 1.7em;
+  border-radius: 8px
 }
