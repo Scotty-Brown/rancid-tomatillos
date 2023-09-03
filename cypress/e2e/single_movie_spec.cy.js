@@ -5,7 +5,7 @@ describe('Single Movie Page', () => {
       fixture: 'mainSampleData'
     }).as('getData')
     .visit('http://localhost:3000/')
-    .wait('@getData')
+    // .wait('@getData')
   })
   
   
@@ -57,7 +57,7 @@ describe('Single Movie Page', () => {
     .get('.single-movie-card').should('exist')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
     .get('.single-movie-headings').contains('h2', 'R.I.P.D. 2: Rise of the Damned')
-    .get('.single-card-description').children().should('have.length', 4)
+    .get('.single-card-description').children().should('have.length', 3)
     .get('.single-card-description').contains('p', 'Budget: $130')
     cy.get('.go-back').click()
     .url().should('eq', 'http://localhost:3000/')

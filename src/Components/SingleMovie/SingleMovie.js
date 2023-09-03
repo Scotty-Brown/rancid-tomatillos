@@ -41,7 +41,7 @@ function SingleMovie({ setError, setLoading }) {
   }
 
   function VideoButton(link) {
-    return (
+    return video && (
       <div>
         <Link to={link.link} target="_blank" rel="noopener noreferrer">
           <button className='button'>Watch Trailer</button>
