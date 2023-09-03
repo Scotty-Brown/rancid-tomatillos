@@ -1,14 +1,15 @@
 import './SingleMovie.css';
 import SingleMovieCard from '../SingleMovieCard/SingleMovieCard';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
-import { getSingleMovie } from '../../apiCalls';
+import { useParams, Link } from 'react-router-dom'
+import { getSingleMovie, getMovieVideo } from '../../apiCalls';
 import PropTypes from 'prop-types';
 
 
 function SingleMovie({ setError, setLoading }) {
 
   const [singleMovie, setSingleMovie] = useState(null)
+  const [video, setVideo] = useState(null)
   const { id } = useParams()
 
   function showSingleMovie(id) {
@@ -24,13 +25,36 @@ function SingleMovie({ setError, setLoading }) {
     })
   }
 
+  function getVideoLink(id) {
+    getMovieVideo(id)
+    .then(data => {
+      const trailer = data.videos.find((entry) => entry.type === "Trailer")
+      const link = `https://www.youtube.com/watch?v=${trailer.key}`
+      setVideo(link)
+    })
+    .catch(error => {
+      setError(`Request failed - ${error.message}`)
+    })
+  }
+
+  function VideoButton(link) {
+    return (
+      <div>
+        <Link to={link.link} target="_blank" rel="noopener noreferrer">
+          <button className='button'>Watch Trailer</button>
+        </Link>
+      </div>
+    );
+  }
+
   useEffect(() => {
     showSingleMovie(id)
+    getVideoLink(id)
   }, [id])
 
 
   return singleMovie && (
-    <SingleMovieCard singleMovie={singleMovie} />
+    <SingleMovieCard VideoButton={VideoButton} video={video} singleMovie={singleMovie} />
   ) 
 }
 

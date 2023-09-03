@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './SingleMovieCard.css'
 
-function SingleMovieCard({ singleMovie }) {
+function SingleMovieCard({ singleMovie, VideoButton, video }) {
 
   return (
     <article className='single-movie-card' style={{'--backdrop-img': `url(${singleMovie.movie.backdrop_path})`}}> 
@@ -20,6 +20,7 @@ function SingleMovieCard({ singleMovie }) {
               <p>Revenue: ${singleMovie.movie.revenue?.toLocaleString()}</p>
               <p>Run Time: {singleMovie.movie.runtime} minutes</p>
               <p>{singleMovie.movie.overview}</p>
+              <VideoButton link={video} />
               <Link to={'/'} className='button'>Go Back</Link>
             </div>
           </section>
