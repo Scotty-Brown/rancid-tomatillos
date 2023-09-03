@@ -15,6 +15,28 @@
   align-items: center;
 }
 
+.single-movie-title {
+  color: aliceblue;
+    font: icon;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: auto;
+    margin-bottom: 0;
+    padding: 20px;
+    box-shadow: inset -1px 1px 20px 4px hsla(0,0%,100%,1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.key {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
 .single-movie-card-image{
   width: 300px;
   opacity: 90%;
@@ -38,6 +60,13 @@
 
 p {
   margin: 10px
+}
+
+
+.align-content-left {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .single-card-body-text {
@@ -74,10 +103,7 @@ p {
 	background:linear-gradient(to bottom, black 5%, #ee9092 100%);
 	background-color:#ee9092;
 }
-/* .button:active {
-	position:relative;
-	top:1px;
-} */
+
 
 @media screen and (max-width: 865px) {
   .single-card-body-all {

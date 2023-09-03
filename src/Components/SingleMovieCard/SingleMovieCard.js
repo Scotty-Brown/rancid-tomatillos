@@ -9,16 +9,18 @@ function SingleMovieCard({ singleMovie, VideoButton, video }) {
           <img className='single-movie-card-image' src={singleMovie.movie.poster_path} alt={singleMovie.movie.title}/>
           <section className='single-card-body-text'>
             <div className='single-movie-headings'>
-              <h2>{singleMovie.movie.title}</h2>
-              <h3>Tagline: "{singleMovie.movie.tagline} "</h3>
+              <h2 className='single-movie-title'>{singleMovie.movie.title}</h2>
+              <h3> "{singleMovie.movie.tagline} "</h3>
             </div>
             <div className='single-card-description'>
-              <p>Release Date: {singleMovie.movie.release_date}</p>
-              <p>Genres: {singleMovie.movie.genres?.join(' | ').split()}</p>
-              <p>Rancid Rating - {singleMovie.movie.average_rating?.toFixed(1)} 🍅s</p>
-              <p>Budget: ${singleMovie.movie.budget?.toLocaleString()}</p>
-              <p>Revenue: ${singleMovie.movie.revenue?.toLocaleString()}</p>
-              <p>Run Time: {singleMovie.movie.runtime} minutes</p>
+              <div className='align-content-left'>
+                <p><span className='key'>Release Date</span>: {singleMovie.movie.release_date}</p>
+                <p><span className='key'>Genres</span>: {singleMovie.movie.genres?.join(' | ').split()}</p>
+                <p><span className='key'>Rancid Rating</span>- {singleMovie.movie.average_rating?.toFixed(1)} 🍅s</p>
+                <p><span className='key'>Budget</span>: ${singleMovie.movie.budget?.toLocaleString()}</p>
+                <p><span className='key'>Revenue</span>: ${singleMovie.movie.revenue?.toLocaleString()}</p>
+                <p><span className='key'>Run Time</span>: {singleMovie.movie.runtime} minutes</p>
+              </div>
               <p>{singleMovie.movie.overview}</p>
               <VideoButton link={video} />
               <Link to={'/'} className='button'>Go Back</Link>
