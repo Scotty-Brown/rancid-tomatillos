@@ -23,4 +23,22 @@ describe('Mainpage', () => {
     .get('.movies-container').find('.movie-card').should("have.length", 3)
   })
 
+  it('should show 1 movie when user types "black adam"', () => {
+    cy.visit('http://localhost:3000/')
+    cy.wait('@getData')
+    cy.get('.search').should('exist')
+    .get('label[for="search"]').should('exist')
+    .get('input[id="search"]').should('exist')
+    .get('input[id="search"]').type('black adam')
+    .get('.movies-container').find('.movie-card').should("have.length", 1)
+  })
+
+  it('should show 2 movies when user types "the"', () => {
+    cy.visit('http://localhost:3000/')
+    cy.wait('@getData')
+    cy.get('.search').should('exist')
+    .get('label[for="search"]').should('exist')
+    .get('input[id="search"]').type('the')
+    .get('.movies-container').find('.movie-card').should("have.length", 2)
+  })  
 })
