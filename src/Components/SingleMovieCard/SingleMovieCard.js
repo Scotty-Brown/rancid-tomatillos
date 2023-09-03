@@ -23,7 +23,7 @@ function SingleMovieCard({ singleMovie, VideoButton, video }) {
               </div>
               <p>{singleMovie.movie.overview}</p>
               <VideoButton link={video} />
-              <Link to={'/'} className='button'>Go Back</Link>
+              <Link to={'/'} className='button go-back'>Go Back</Link>
             </div>
           </section>
       </div>

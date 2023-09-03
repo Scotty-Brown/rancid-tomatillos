@@ -15,11 +15,15 @@ describe('Error Handling Page', () => {
       'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270',
       { statusCode: 404 }
     ).as('getSecondData')
+
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos', {
+      statusCode: 200, 
+      fixture: 'trailerFetch'
+    }).as('trailer')
    
-    
 
     cy.get('[href="/436270"] > .movie-card').click()
-      .wait('@getSecondData')
+      cy.wait(['@getSecondData', '@trailer'])
       .url().should('eq', 'http://localhost:3000/436270')
       .get('.error').should('exist')
       .get('h2').should('contain', 'Request failed - 404: Nothing to see here')
