@@ -7,12 +7,14 @@ import { getAllMovies } from '../../apiCalls'
 import ErrorHandling from '../ErrorHandling/ErrorHandling'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import Search from '../Search/Search';
 
 function App() {
   const [movies, setMovies] = useState({})
   const [error, setError] = useState('')
   const location = useLocation().pathname
   const [loading, setLoading] = useState(false)
+  const [searchInput, setSearchInput] = useState('')
 
   useEffect(() => {
     setError('')
@@ -38,8 +40,9 @@ function App() {
       <Header />
       {error && <ErrorHandling error={error}/>}
       {loading && <Loading loading={loading}/>}
+      <Search searchInput={searchInput} setSearchInput={setSearchInput}/>
       <Routes>
-        <Route path='/' element={<Movies movies={movies} />} />
+        <Route path='/' element={<Movies movies={movies} searchInput={searchInput}/>} />
         <Route path='/:id' element={<SingleMovie setLoading={setLoading} setError={setError} />}/> 
         <Route path='*' element={<ErrorHandling error={error}/>}></Route>
       </Routes>

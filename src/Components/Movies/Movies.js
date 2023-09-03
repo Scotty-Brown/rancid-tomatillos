@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 
-function Movies({ movies }) {
+function Movies({ movies, searchInput }) {
   const movieCards = movies.movies
-    && movies.movies.map((movie) => {
+    && movies.movies
+    .filter(movie => movie.title.toLowerCase().includes(searchInput.toLowerCase()))
+    .map(movie => {
         return (
           <Link to={`/${movie.id}`} className='movie-comp' key={movie.id}>
             <MovieCard
