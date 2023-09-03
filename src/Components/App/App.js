@@ -18,6 +18,7 @@ function App() {
 
   useEffect(() => {
     setError('')
+    setSearchInput('')
   }, [location])
 
 
@@ -40,9 +41,8 @@ function App() {
       <Header />
       {error && <ErrorHandling error={error}/>}
       {loading && <Loading loading={loading}/>}
-      <Search searchInput={searchInput} setSearchInput={setSearchInput}/>
       <Routes>
-        <Route path='/' element={<Movies movies={movies} searchInput={searchInput}/>} />
+        <Route path='/' element={<><Search setSearchInput={setSearchInput}/>< Movies movies={movies} searchInput={searchInput}/></>} />
         <Route path='/:id' element={<SingleMovie setLoading={setLoading} setError={setError} />}/> 
         <Route path='*' element={<ErrorHandling error={error}/>}></Route>
       </Routes>

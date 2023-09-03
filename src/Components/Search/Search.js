@@ -8,6 +8,7 @@ function Search({ setSearchInput }) {
   return (
     <section className='search'>
       <input 
+        className='input-field'
         type='text' 
         placeholder='search movies here'
         onChange={handleChange} />
