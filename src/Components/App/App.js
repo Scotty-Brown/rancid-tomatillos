@@ -42,7 +42,7 @@ function App() {
       {error && <ErrorHandling error={error}/>}
       {loading && <Loading loading={loading}/>}
       <Routes>
-        <Route path='/' element={<><Search setSearchInput={setSearchInput}/>< Movies movies={movies} searchInput={searchInput}/></>} />
+        <Route path='/' element={<><Search setSearchInput={setSearchInput}/>< Movies movies={movies} searchInput={searchInput} setMovies={setMovies} /></>} />
         <Route path='/:id' element={<SingleMovie setLoading={setLoading} setError={setError} />}/> 
         <Route path='*' element={<ErrorHandling error={error}/>}></Route>
       </Routes>
