@@ -26,7 +26,7 @@ This application allows users to view an array of movies and and select a movie 
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-This application simulates a movie library, in which users can search through and find the movie they want to view more details on. The user can click on a movie, view its details, and return back to the homepage with the full movie libary. This project runs on a local server and interacts with API endpoints.
+This application simulates a movie library, in which users can search through and find the movie they want to view more details on. If a user knows what movie they are looking for, they can use the search bar to type in the name of the movie to pull up. Additionally, the user can sort all movies based off of their 'Rancid Rating' by either most to least rancid. The user can click on a movie, view its details, be redirected to Youtube to watch the movie trailer, and return back to the homepage with the full movie libary. This project runs on a local server and interacts with API endpoints.
 
 
 ### Installation Instructions:
@@ -64,10 +64,12 @@ The learning goals include gaining competency with React fundatmentals, testing 
 ## 🌱 Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 Wins:
-- 
+- We were able to create a multi-page UX using React Router.
+- Gain experience with React fundementals.
 
 Challenges:
-- 
+- One of our challenges was determining the architecture of our app that made the most sense. The architecture of the app changed as we moved through iterations to best fit the flow of our application.
+- Cypress was challenging to start and implement as this was one of our new learning goals for this project. 
 
 ## ℹ️ Source Credits:
 - Error Handling Page Photo by <a href="https://unsplash.com/@cyrus_c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cyrus Chew</a> on <a href="https://unsplash.com/photos/Dl39g6QhOIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
