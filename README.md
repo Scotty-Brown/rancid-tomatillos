@@ -8,7 +8,7 @@
 [![LinkedIn](https://img.shields.io/badge/Judy-blue?style=for-the-badge&logo=LinkedIn&logoColor=black)](https://www.linkedin.com/in/judy0ye)
 [![LinkedIn](https://img.shields.io/badge/Scotty-blue?style=for-the-badge&logo=LinkedIn&logoColor=black)](https://www.linkedin.com/in/scotty-brown-2140b3278/)
 
-
+[DEPLOYED LINK](https://rancid-tomatillos-jysb.vercel.app/)
 
 ## :pencil: Description
 
@@ -69,7 +69,8 @@ Wins:
 
 Challenges:
 - One of our challenges was determining the architecture of our app that made the most sense. The architecture of the app changed as we moved through iterations to best fit the flow of our application.
-- Cypress was challenging to start and implement as this was one of our new learning goals for this project. 
+- Cypress was challenging to start and implement as this was one of our new learning goals for this project.
+- Intercepting all of our fetch calls in our Cypress testing was challenging and took a few hours of collaboration.
 
 ## ℹ️ Source Credits:
 - Error Handling Page Photo by <a href="https://unsplash.com/@cyrus_c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cyrus Chew</a> on <a href="https://unsplash.com/photos/Dl39g6QhOIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
