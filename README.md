@@ -18,15 +18,17 @@ This application allows users to view an array of movies and and select a movie 
 </div>
 
 ## 🎥: Preview
-<details open>
 
+![rancid1](https://github.com/Scotty-Brown/rancid-tomatillos/assets/129805348/d3e25f0f-ecac-41c2-a4e9-501abcd317d6)
 
+![rancid2](https://github.com/Scotty-Brown/rancid-tomatillos/assets/129805348/a8ed3c99-5d85-46b8-a172-3d93a56c4a17)
 
-</details>
+![rancid3](https://github.com/Scotty-Brown/rancid-tomatillos/assets/129805348/f1462147-e780-4799-ba7c-bf0fb100b8a3)
 
 ### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-This application simulates a movie library, in which users can search through and find the movie they want to view more details on. If a user knows what movie they are looking for, they can use the search bar to type in the name of the movie to pull up. Additionally, the user can sort all movies based off of their 'Rancid Rating' by either most to least rancid. The user can click on a movie, view its details, be redirected to Youtube to watch the movie trailer, and return back to the homepage with the full movie libary. This project runs on a local server and interacts with API endpoints.
+This application simulates a movie library, in which users can search through and find the movie they want to view more details on. If a user knows what movie they are looking for, they can use the search bar to type in the name of the movie to pull up. Additionally, the user can sort all movies based off of their 'Rancid Rating' by either most to least rancid. 
+The user can click on a movie, view its details, be redirected to Youtube to watch the movie trailer, and return back to the homepage with the full movie libary. This project runs on a local server and interacts with API endpoints.
 
 
 ### Installation Instructions:
