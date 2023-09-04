@@ -54,7 +54,7 @@ describe('Error Handling Page', () => {
   });
 })
     
-describe('400 error', () => {
+describe('Should handle 404 error on page load', () => {
   it('should return 404 error for all movies page', () => { 
      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 404,
@@ -68,7 +68,7 @@ describe('400 error', () => {
     });
 })
 
-describe('500 error', () => {
+describe('Should handle a 500 error on page load', () => {
      it('should return 500 error for all movies page', () => {
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
         statusCode: 500, fixture: 'mainSampleData'}).as('get500FetchError')

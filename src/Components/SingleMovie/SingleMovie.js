@@ -43,7 +43,7 @@ function SingleMovie({ setError, setLoading }) {
   function VideoButton(link) {
     return video && (
       <div>
-        <Link to={link.link} target="_blank" rel="noopener noreferrer">
+        <Link className='trailer-div' to={link.link} target="_blank" rel="noopener noreferrer">
           <button className='button'>Watch Trailer</button>
         </Link>
       </div>
