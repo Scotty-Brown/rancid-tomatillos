@@ -27,6 +27,10 @@ The user can click on a movie, view its details, be redirected to Youtube to wat
 ### Preview - Error Page
 ![rancid3](https://github.com/Scotty-Brown/rancid-tomatillos/assets/129805348/f1462147-e780-4799-ba7c-bf0fb100b8a3)
 
+### Preview - Responsive Design
+![rancid4 2](https://github.com/Scotty-Brown/rancid-tomatillos/assets/129805348/0ba2c01f-41ba-4307-a1b7-f3dd6826608c)
+
+
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 In order to use this project, please follow the steps below:
